@@ -3,8 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ServiceService } from './modules/produto/service/service.service';
-import { ControllerController } from './modules/produto/controller/controller.controller';
+import { ServiceService } from './modules/produto/service/produto.service';
+import { ControllerController } from './modules/produto/controller/produto.controller';
 import { ProdutoModule } from './modules/produto/produto.module';
 
 @Module({

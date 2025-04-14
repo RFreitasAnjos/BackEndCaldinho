@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('usuarios')
+@Entity('usuario')
 export class Usuario{
     @PrimaryGeneratedColumn()
     id: number;
@@ -22,6 +22,8 @@ export class Usuario{
 
     @Column()
     senha: string;
+
+    //Todo: Histórico
 
     @Column({ default: true})
     ativo: boolean;

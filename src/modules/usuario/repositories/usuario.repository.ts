@@ -9,7 +9,7 @@ export class UsuarioRepository{
 
     constructor(
         @InjectRepository(Usuario)
-        private readonly repo: Repository<Usuario>,
+        private readonly repo: Repository<Usuario>
     ){}
 
     async salvar(dto: CriarUsuarioDto): Promise<Usuario> {
