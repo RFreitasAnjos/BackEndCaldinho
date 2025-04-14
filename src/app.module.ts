@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ServiceService } from './modules/produto/service/produto.service';
+import { produtoService } from './modules/produto/service/produto.service';
 import { ControllerController } from './modules/produto/controller/produto.controller';
 import { ProdutoModule } from './modules/produto/produto.module';
 
@@ -22,7 +22,7 @@ import { ProdutoModule } from './modules/produto/produto.module';
     }),
     UsuarioModule,
     ProdutoModule],
-  controllers: [AppController, ControllerController],
-  providers: [AppService, ServiceService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
