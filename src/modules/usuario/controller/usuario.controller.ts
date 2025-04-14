@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req } from '@nestjs/common';
 import { UsuarioService } from '../services/usuario.service';
 import { CriarUsuarioDto } from '../dto/usuario.dto';
 
@@ -12,7 +12,7 @@ export class UsuarioController {
     }
 
     @Get()
-    listarUsuario(){
+    async listarUsuario(): Promise<any[]> {
         return this.usuarioService.listar();
     }
 }

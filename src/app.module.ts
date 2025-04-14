@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { produtoService } from './modules/produto/service/produto.service';
-import { ControllerController } from './modules/produto/controller/produto.controller';
+import { produtoController } from './modules/produto/controller/produto.controller';
 import { ProdutoModule } from './modules/produto/produto.module';
 import { ReservaModule } from './modules/reserva/reserva.module';
+import { UsuarioController } from './modules/usuario/controller/usuario.controller';
 
 @Module({
   imports: [
@@ -17,13 +18,14 @@ import { ReservaModule } from './modules/reserva/reserva.module';
       username: 'postgres',
       password: 'postgres',
       database: 'caldinho_iranir',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [__dirname + '/**/*/*.entity{.ts,.js}'],
       synchronize: true,
       autoLoadEntities: true,
     }),
     UsuarioModule,
     ProdutoModule,
-    ReservaModule],
+    ReservaModule,
+    ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -4,7 +4,7 @@ import { CriarProdutoDto } from '../dto/produto.dto';
 
 
 @Controller('controller')
-export class ControllerController {
+export class produtoController {
     constructor(private readonly produtoService: produtoService){}
 
     @Post()

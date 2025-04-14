@@ -1,10 +1,15 @@
 import { Module } from '@nestjs/common';
 import { UsuarioController } from './controller/usuario.controller';
 import { UsuarioService } from './services/usuario.service';
-import { UsuarioRepository } from './repositories/usuario.repository';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Usuario } from './usuario.entity';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([Usuario])], // Adicione suas entidades aqui, se necessário
   controllers: [UsuarioController],
-  providers: [UsuarioService,UsuarioRepository]
+  providers: [UsuarioService],
+  exports: [UsuarioService]
 })
-export class UsuarioModule {}
+export class UsuarioModule {
+  constructor(private UsuarioService: UsuarioService) { } // Adicione o construtor aqui
+}
